@@ -14,20 +14,22 @@
                 <span>Tasks Manager</span>
             </div>
             <div id="controls">
-                <input v-model="newTask" type="text" placeholder="Insert your task...">
-                <button @click="add">ADD</button>
+                <input v-model="newTask" id="task" type="text" placeholder="Insert your task..." @keyup.enter="add">
+                <button @click="add">{{ (onEdit === true) ? 'EDIT' : 'ADD' }}</button>
             </div>
         </div>
     </header>
     <main>
         <div class="container w30">
             <h1>Tasks to do</h1>
-            <div id="tasks">
+            <div class="tasks">
+                {{ (tasks.length === 0) ? emptyTasks : "" }}
                 <div v-for="(task, i) in tasks" class="tasks-item">
                     {{ task.title }}
                     <div class="task-controls">
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button @click="check(task, i)">Check</button>
+                        <button @click="edit(task.title, i)">Edit</button>
+                        <button class="delete" @click="deleteTask(i)">Delete</button>
                     </div>
                 </div>
             </div>
