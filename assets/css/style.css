@@ -105,6 +105,11 @@ main .tasks-item {
     margin-top: 1rem;
 }
 
+main .tasks-item span.done {
+    text-decoration: line-through;
+    margin: .5rem;
+}
+
 main .tasks-item .task-controls {
     margin-right: 10rem;
 }
@@ -127,6 +132,5 @@ main button {
 main button.delete {
     background: #ff0002;
     border: 1px solid #800909;
-
 }
 /*endregion*/

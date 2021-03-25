@@ -23,6 +23,9 @@
         <div class="container w30">
             <h1>Tasks to do</h1>
             <div class="tasks">
+                <div v-for="(task) in tasksDone" class="tasks-item">
+                    <span class="done">{{ task.title }}</span>
+                </div>
                 {{ (tasks.length === 0) ? emptyTasks : "" }}
                 <div v-for="(task, i) in tasks" class="tasks-item">
                     {{ task.title }}
