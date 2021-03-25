@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<div id="root">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/img/logo.svg" alt="logo">
+                <span>Tasks Manager</span>
+            </div>
+            <div id="controls">
+                <input v-model="newTask" type="text" placeholder="Insert your task...">
+                <button @click="add">ADD</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container w30">
+            <h1>Tasks to do</h1>
+            <div id="tasks">
+                <div v-for="(task, i) in tasks" class="tasks-item">
+                    {{ task.title }}
+                    <div class="task-controls">
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container w60">
+            <img src="./assets/img/time-management.svg" alt="">
+        </div>
+    </main>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./assets/js/createItem.js"></script>
+</body>
+</html>
